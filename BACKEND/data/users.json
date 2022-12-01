@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "firstname": "Leo",
+    "name": "Fyzoriel",
+    "email": "fyzoriel@email.com",
+    "phone": "0777777777",
+    "address": "here",
+    "passphrase": "$2y$10$UFFCzVkwM7fUDczscNR3EOiMyRLDioT1LmgSWpMlzkpvDT8Vn/9mC",
+    "role": "user"
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Silver Star",
+    "manufacturer": "Bolliger & Mabillard",
+    "type": "Steel",
+    "model": ["Hyper"],
+    "height": 73,
+    "length": 1620,
+    "speed": 127,
+    "capacity": 1750,
+    "price": 12500000,
+    "images": [
+      "https://rcdb.com/aaafxza",
+      "https://rcdb.com/aaaozza"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "F.L.Y",
+    "manufacturer": "Vekoma",
+    "type": "Steel",
+    "model": ["Flying", "Launched"],
+    "height": 78.1,
+    "length": 1236,
+    "speed": 78,
+    "capacity": 1400,
+    "price": 11000000,
+    "images": [
+      "https://rcdb.com/aahbpda",
+      "https://rcdb.com/aahbqva",
+      "https://rcdb.com/aahbpqa"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Arthur - The ride",
+    "manufacturer": "Mack Rides",
+    "type": "Steel",
+    "model": ["Inverted","Powered", "Spinning"],
+    "height": 13.5,
+    "length": 550,
+    "speed": 31,
+    "capacity": 1500,
+    "price": 25000000,
+    "images": [
+      "https://rcdb.com/aadcpfa",
+      "https://rcdb.com/aadcoba"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wodan - Timburcoaster",
+    "manufacturer": "Great Coasters International",
+    "type": "Wood",
+    "model": ["Twister"],
+    "height": 40,
+    "length": 1050,
+    "speed": 100,
+    "capacity": 1250,
+    "price": 10000000,
+    "images": [
+      "https://rcdb.com/aacfosa",
+      "https://rcdb.com/aacfpva"
+    ]
+  }
+]

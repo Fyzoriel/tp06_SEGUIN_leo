@@ -1,0 +1,14 @@
+<div *ngIf="(products$ | async)?.length; else noProducts">
+  <div class="details" *ngFor="let product of products$ | async">
+    <div>
+      <img class="image" [src]="product.images[0]" alt="rip">
+    </div>
+    <div>
+      <p>{{product.name}} - {{product.price}}</p>
+      <button class="remove" (click)="removeFromCart(product)">Remove</button>
+    </div>
+  </div>
+</div>
+<ng-template #noProducts>
+  <a routerLink="/" class="link">There is no product in cart :c <br>Click here to go to the product page</a>
+</ng-template>

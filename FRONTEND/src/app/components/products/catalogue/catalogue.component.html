@@ -1,0 +1,29 @@
+<div class="filters">
+  <input id="nameFilter" class="input" type="text" placeholder="Search by name" [(ngModel)]="nameFilter" (ngModelChange)="this.nameFilterChanged$.next($event)"/>
+
+  <ng-select
+    [items]="models$ | async"
+    [multiple]="true"
+    [hideSelected]="true"
+    placeholder="Search by model"
+    [(ngModel)]="modelsFilter"
+    (ngModelChange)="this.modelsFilterChanged$.next($event)"
+    [closeOnSelect]="false"
+  >
+  </ng-select>
+</div>
+
+<div class="products_container">
+  <div *ngFor="let product of products$ | async" class="products_card" routerLink="/products/{{product.id}}">
+    <img
+      *ngIf="product.images !== undefined && product.images.length > 0"
+      src="{{ product.images[0] }}"
+      alt="Preview image"
+      class="preview_image">
+
+    <p>Name: {{ product.name }}</p>
+    <p>Price: {{ product.price | number:'':'fr'}}€</p>
+    <p>Manufacturer: {{ product.manufacturer }}</p>
+    <p>Model: {{ product.model.join(", ") }}</p>
+  </div>
+</div>

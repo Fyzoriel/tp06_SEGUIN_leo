@@ -1,0 +1,71 @@
+<form class="form" [formGroup]="userDataForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <p>Register</p>
+  <p>Because of permission error to write in file, and no database configuration for the moment, there is an error that occur when form is submit, please use fyzoriel@email.com as login and passphrase in the login form</p>
+  <div class="errors" *ngIf="registerError">
+    <p class="error">{{ registerError }}</p>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('firstName')?.invalid && (userDataForm.get('firstName')?.touched || userDataForm.get('firstName')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('firstName')?.errors?.['required']">First name is required</p>
+    </div>
+    <label for="firstname">First name</label>
+    <input id="firstname" class="input" type="text" formControlName="firstName"/>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('name')?.invalid && (userDataForm.get('name')?.touched || userDataForm.get('name')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('name')?.errors?.['required']">Name is required</p>
+    </div>
+    <label for="name">Name</label>
+    <input id="name" class="input" type="text" formControlName="name"/>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('email')?.invalid && (userDataForm.get('email')?.touched || userDataForm.get('email')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('email')?.errors?.['required']">Email is required</p>
+      <p class="error" *ngIf="userDataForm.get('email')?.errors?.['email']">Email is not valid</p>
+    </div>
+    <label for="email">Email</label>
+    <input id="email" class="input" type="text" formControlName="email"/>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('phone')?.invalid && (userDataForm.get('phone')?.touched || userDataForm.get('phone')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('phone')?.errors?.['required']">Phone is required</p>
+      <p class="error" *ngIf="userDataForm.get('phone')?.errors?.['pattern']">Phone is not valid</p>
+    </div>
+    <label for="phone">Phone</label>
+    <input id="phone" class="input" type="text" formControlName="phone"/>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('address')?.invalid && (userDataForm.get('address')?.touched || userDataForm.get('address')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('address')?.errors?.['required']">Address is required</p>
+    </div>
+    <label for="address">Address</label>
+    <input id="address" class="input" type="text" formControlName="address"/>
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('passphrase')?.invalid && (userDataForm.get('passphrase')?.touched || userDataForm.get('passphrase')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('passphrase')?.errors?.['required']">Pass phrase is required</p>
+      <p class="error" *ngIf="userDataForm.get('passphrase')?.errors?.['minlength']">Pass phrase must be at least 8 characters long</p>
+    </div>
+    <label for="passphrase">Passphrase</label>
+    <input id="passphrase" class="input" type="password" formControlName="passphrase">
+  </div>
+
+  <div class="input_container">
+    <div class="errors" *ngIf="userDataForm.get('confirmPassphrase')?.invalid && (userDataForm.get('confirmPassphrase')?.touched || userDataForm.get('confirmPassphrase')?.dirty)">
+      <p class="error" *ngIf="userDataForm.get('confirmPassphrase')?.errors?.['required']">Confirm pass phrase is required</p>
+      <p class="error" *ngIf="userDataForm.get('confirmPassphrase')?.errors?.['minlength']">Confirm pass phrase must be at least 8 characters long</p>
+      <p class="error" *ngIf="userDataForm.get('confirmPassphrase')?.errors?.['matching']">Pass phrases are not equivalent</p>
+    </div>
+    <label for="passphraseConfirm">Confirm passphrase</label>
+    <input id="passphraseConfirm" class="input" type="password" formControlName="confirmPassphrase">
+  </div>
+
+  <input class="submit" type="submit" [disabled]="!userDataForm.valid"/>
+</form>

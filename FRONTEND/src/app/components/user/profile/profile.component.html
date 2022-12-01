@@ -1,0 +1,7 @@
+<div *ngIf="userInformation$ | async as userInformation" class="data_container">
+  <p class="display">First name: {{userInformation.firstName}}</p>
+  <p class="display">Name: {{userInformation.name}}</p>
+  <p class="display">Email: {{userInformation.email}}</p>
+  <p class="display">Address: {{userInformation.address}}</p>
+  <p class="display">Phone: {{userInformation.phone | phone}}</p>
+</div>
